@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <div>
-      <div className="navbar drop-shadow-xl bg-black py-5">
+      <div className="navbar drop-shadow-xl bg-black py-5 sticky top-0">
         <div className="flex-1 text-teal-400 lg:ml-20 md:ml-8">
           <div className="text-2xl font-semibold">
             {/* <FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon> */}
