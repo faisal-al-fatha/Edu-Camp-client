@@ -7,12 +7,15 @@ export const AuthContext = createContext([]);
 
 const Main = () => {
     const courses = useLoaderData();
-    console.log(courses);
+    
+    const authInfo = { courses,}
     return (
         <div>
+            <AuthContext.Provider value = {authInfo}>
             <Nav></Nav>
             <Outlet></Outlet>
             <Footer></Footer>
+            </AuthContext.Provider>
         </div>
     );
 };

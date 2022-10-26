@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <footer className="py-6 bg-gray-900 text-gray-50">
+      <footer className="py-6 bg-black text-gray-50">
         <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
           <div className="grid grid-cols-12">
-            <div className="pb-6 col-span-full md:pb-0 md:col-span-3 pt-9">
+            <div className="pb-6 col-span-full md:pb-0 lg:col-span-3 pt-9">
               <div className="flex-1 text-teal-400 flex justify-center lg:justify-start items-center lg:ml-20 md:ml-8">
                 <div className="text-2xl font-semibold">
                   {/* <FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon> */}
@@ -22,7 +22,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div className="col-span-12 text-center md:text-left md:col-span-6 md:pt-10 pt-0">
+            <div className="col-span-12 text-center lg:text-left lg:col-span-6 md:pt-10 pt-0">
               <p className="pb-1 text-lg font-medium"></p>
               <ul className="lg:flex justify-around px-20">
                 <li>
@@ -67,7 +67,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="flex justify-center col-span-12 text-center pt-10 space-x-4 lg:pt-10 md:col-span-3">
+            <div className="flex justify-center col-span-12 text-center pt-10 space-x-4 lg:pt-10 lg:col-span-3">
               <a
                 rel="noopener noreferrer"
                 href="/"

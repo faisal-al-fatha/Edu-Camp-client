@@ -1,6 +1,6 @@
 const SignUp = () => {
   return (
-    <div className="w-full max-w-xl xl:px-8 xl:w-5/12 mx-auto my-5">
+    <div className="w-full max-w-xl xl:px-8 lg:w-5/12 mx-auto my-5">
       <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
         <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
           Sign up for updates
@@ -11,10 +11,10 @@ const SignUp = () => {
               htmlFor="firstName"
               className="inline-block mb-1 font-medium"
             >
-              First name
+              Name
             </label>
             <input
-              placeholder="John"
+              placeholder="John Doe"
               required
               type="text"
               className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
@@ -22,19 +22,7 @@ const SignUp = () => {
               name="firstName"
             />
           </div>
-          <div className="mb-1 sm:mb-2">
-            <label htmlFor="lastName" className="inline-block mb-1 font-medium">
-              Last name
-            </label>
-            <input
-              placeholder="Doe"
-              required
-              type="text"
-              className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-              id="lastName"
-              name="lastName"
-            />
-          </div>
+          
           <div className="mb-1 sm:mb-2">
             <label htmlFor="email" className="inline-block mb-1 font-medium">
               E-mail
@@ -48,12 +36,25 @@ const SignUp = () => {
               name="email"
             />
           </div>
+          <div className="mb-1 sm:mb-2">
+            <label htmlFor="password" className="inline-block mb-1 font-medium">
+              Password
+            </label>
+            <input
+              placeholder="!@#$%^&*123"
+              required
+              type="password"
+              className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+              id="password"
+              name="password"
+            />
+          </div>
           <div className="mt-4 mb-2 sm:mb-4">
             <button
               type="submit"
-              className="w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded-none shadow-md btn btn-outline bg-rose-500 text-white hover:bg-rose-800 focus:shadow-outline focus:outline-none"
+              className="w-full h-12 px-6 rounded-sm font-medium tracking-wide transition duration-200 shadow-md btn btn-outline bg-rose-500 text-white hover:bg-rose-800 focus:shadow-outline focus:outline-none"
             >
-              Subscribe
+              Submit
             </button>
           </div>
           <div className="flex items-center w-full my-4">

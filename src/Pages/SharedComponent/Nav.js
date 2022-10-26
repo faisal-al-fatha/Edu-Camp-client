@@ -11,12 +11,12 @@ const Nav = () => {
             {/* <FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon> */}
             {<FontAwesomeIcon icon={faUserGraduate}></FontAwesomeIcon>}
           </div>
-          <a
+          <Link
             className="btn btn-ghost normal-case text-2xl font-semibold"
-            href="./"
+            to="./"
           >
             Edu Camp
-          </a>
+          </Link>
         </div>
         <div className="navbar-center text-white hidden lg:flex ml-10">
           <ul className="menu menu-horizontal p-0">
@@ -61,10 +61,26 @@ const Nav = () => {
                 Sign Up
               </Link>
             </li>
+            <li>
+              <label
+                for="Toggle1"
+                className="inline-flex items-center cursor-pointer dark:text-gray-100"
+              >
+                <span>Light</span>
+                <span className="relative">
+                  <input id="Toggle1" type="checkbox" className="hidden peer" />
+                  <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-emerald-400"></div>
+                  <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                </span>
+                <span>Dark</span>
+              </label>
+            </li>
           </ul>
         </div>
-        <div className="flex-none">
-          <div className="dropdown dropdown-end  lg:hidden">
+
+        {/* dropdown menu starts here  */}
+        <div className="flex-none z-50">
+          <div className="dropdown dropdown-end z-50  lg:hidden">
             <label tabIndex={0} className="btn btn-ghost btn-square avatar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,49 +98,49 @@ const Nav = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black text-white rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black z-50 text-white rounded-box w-52"
             >
               <li>
-              <Link
-                to="/home"
-                aria-label="Home"
-                title="Home"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/courses"
-                aria-label="Courses"
-                title="Courses"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
-              >
-                Courses
-              </Link>
-            </li>
+                <Link
+                  to="/home"
+                  aria-label="Home"
+                  title="Home"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/courses"
+                  aria-label="Courses"
+                  title="Courses"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Courses
+                </Link>
+              </li>
 
-            <li>
-              <Link
-                to="/blogs"
-                aria-label="Blogs"
-                title="Blogs"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
-              >
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/registration"
-                aria-label="Sign Up"
-                title="Sign Up"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
-              >
-                Sign Up
-              </Link>
-            </li>
+              <li>
+                <Link
+                  to="/blogs"
+                  aria-label="Blogs"
+                  title="Blogs"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/registration"
+                  aria-label="Sign Up"
+                  title="Sign Up"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Sign Up
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
