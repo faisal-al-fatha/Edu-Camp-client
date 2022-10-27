@@ -1,9 +1,12 @@
+import { getAuth } from "firebase/auth";
 import { createContext, useState } from "react";
 import { Outlet, useLoaderData } from "react-router-dom";
+import app from "../Firebase/firebase.config";
 import Footer from "../Pages/SharedComponent/Footer";
 import Nav from "../Pages/SharedComponent/Nav";
 
-export const AuthContext = createContext([]);
+export const AuthContext = createContext();
+const auth = getAuth(app)
 
 const Main = () => {
     const courses = useLoaderData();
