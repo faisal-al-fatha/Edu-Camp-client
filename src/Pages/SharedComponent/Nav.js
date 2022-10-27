@@ -100,16 +100,17 @@ const Nav = () => {
             <li>
               <p>
                 {user?.photoURL ? (
-                    <div className="tooltip" data-tip={user.displayName}>
+                  <div className="tooltip" data-tip={user.displayName}>
                     <img
-                    className="rounded-full h-8 w-8"
-                    src={user.photoURL}
-                    alt=""
-                  />
+                      className="rounded-full h-8 w-8"
+                      src={user.photoURL}
+                      alt=""
+                    />
                   </div>
-                 
                 ) : (
-                  <FaUser title={user?.displayName? user.displayName: "user"}></FaUser>
+                  <FaUser
+                    title={user?.displayName ? user.displayName : "user"}
+                  ></FaUser>
                 )}
               </p>
             </li>
@@ -195,6 +196,16 @@ const Nav = () => {
               </li>
               <li>
                 <Link
+                  to="/faq"
+                  aria-label="FAQ"
+                  title="FAQ"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/registration"
                   aria-label="Sign Up"
                   title="Sign Up"
@@ -202,6 +213,14 @@ const Nav = () => {
                 >
                   Sign Up
                 </Link>
+              </li>
+              <li>
+                <button
+                  onClick={handleLogOut}
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Log Out
+                </button>
               </li>
             </ul>
           </div>

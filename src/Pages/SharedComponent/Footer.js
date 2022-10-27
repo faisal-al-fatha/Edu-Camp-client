@@ -36,35 +36,35 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/topics"
-                    aria-label="Quiz Topics"
-                    title="Quiz Topics"
-                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                  >
-                    Topics
-                  </Link>
-                </li>
+                <Link
+                  to="/courses"
+                  aria-label="Courses"
+                  title="Courses"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Courses
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/faq"
+                  aria-label="FAQ"
+                  title="FAQ"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  FAQ
+                </Link>
+              </li>
                 <li>
-                  <Link
-                    to="/statistics"
-                    aria-label="Statistics"
-                    title="Statistics"
-                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                  >
-                    Statistics
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/blogs"
-                    aria-label="Blogs"
-                    title="Blog"
-                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                  >
-                    Blogs
-                  </Link>
-                </li>
+                <Link
+                  to="/blogs"
+                  aria-label="Blogs"
+                  title="Blogs"
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Blogs
+                </Link>
+              </li>
               </ul>
             </div>
             <div className="flex justify-center col-span-12 text-center pt-10 space-x-4 lg:pt-10 lg:col-span-3">

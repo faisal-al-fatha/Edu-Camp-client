@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import Courses from "../Courses/Courses";
+import FAQ from "../FAQ/FAQ";
+import SignUp from "../SignUp/SignUp";
 const Home = () => {
     return (
         <div>
-            <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
+            <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0 mb-32">
       <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
         <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
           <div className="max-w-xl mb-6">
@@ -13,7 +16,7 @@ const Home = () => {
                    Courses online
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-black md:text-lg">
-                  Get access to high quality learning whereever you are, with online courses, degrees and programs created by leading universities
+                  Get access to high quality learning where ever you are, with online courses, degrees and programs created by leading universities
                 </p>
           </div>
           <div className="flex flex-col items-center md:flex-row">
@@ -43,6 +46,9 @@ const Home = () => {
         />
       </div>
     </div>
+    <Courses className="mb-16"></Courses>
+    <FAQ className="mb-2"></FAQ>
+    <SignUp className="mb-16"></SignUp>
         </div>
     );
 };

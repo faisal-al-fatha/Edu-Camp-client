@@ -7,7 +7,7 @@ const Courses = () => {
     const { courses } = useContext(AuthContext);
   return (
     <div className="lg:mx-12 mx-4 grid grid-cols-5 md:grid-cols-8">
-      <div className="col-span-2">
+      <div className="col-span-5 md:col-span-2 mx-auto ">
        <LeftSideNav></LeftSideNav>
       </div>
       <div className="col-span-6 mb-6">
