@@ -1,11 +1,18 @@
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Layout/Main";
 
 const Nav = () => {
-    const {user} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   return (
     <div>
       <div className="navbar drop-shadow-xl bg-black py-5 sticky top-0">
@@ -65,27 +72,67 @@ const Nav = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/registration"
-                aria-label="Sign Up"
-                title="Sign Up"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
-              >
-                Sign Up
-              </Link>
+              {user?.uid ? (
+                <button
+                  onClick={handleLogOut}
+                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                >
+                  Log Out
+                </button>
+              ) : (
+                <>
+                  {" "}
+                  <Link
+                    to="/registration"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                  >
+                    Sign Up
+                  </Link>
+                  <Link
+                    to="/login"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                  >
+                    Log In
+                  </Link>
+                </>
+              )}
+            </li>
+            <li>
+              <p>
+                {user?.photoURL ? (
+                  <img
+                    className="rounded-full h-8"
+                    src={user.photoURL}
+                    title={user.displayName}
+                    alt=""
+                  />
+                ) : (
+                  <FaUser title={user?.displayName? user.displayName: "user"}></FaUser>
+                )}
+              </p>
             </li>
             <li>
               <label
-                for="Toggle1"
+                htmlFor="Toggle1"
                 className="inline-flex items-center cursor-pointer dark:text-gray-100"
               >
-                <span><small>Light</small></span>
-                <span className="relative"><small>
-                  <input id="Toggle1" type="checkbox" className="hidden peer" />
-                  <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-emerald-400"></div>
-                  <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div></small>
+                <span>
+                  <small>Light</small>
                 </span>
-                <span><small>Dark</small></span>
+                <span className="relative">
+                  <small>
+                    <input
+                      id="Toggle1"
+                      type="checkbox"
+                      className="hidden peer"
+                    />
+                    <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-emerald-400"></div>
+                    <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                  </small>
+                </span>
+                <span>
+                  <small>Dark</small>
+                </span>
               </label>
             </li>
           </ul>

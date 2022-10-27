@@ -1,12 +1,52 @@
+import { GoogleAuthProvider } from "firebase/auth";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Layout/Main";
+
+
 
 const Login = () => {
+    const { providerLogin, logIn} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [error, setError]= useState('');
+
+    const from = location.state?.from?.pathname|| '/';
+    const handleLogIn = (event)=>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        logIn(email,password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+            form.reset();
+            setError('')
+            navigate(from, {replace: true});
+        })
+        .catch(error=> {
+            setError(error.message)
+        })
+    }
+    
+    const handleGoogleSignIn = () =>{
+    providerLogin(googleProvider)
+    .then(result =>{
+        const user = result.user;
+        console.log(user);
+    })
+    .catch(error=> console.error(error))
+        }
+
     return (
         <div className="w-full max-w-xl xl:px-8 lg:w-5/12 mx-auto my-5">
           <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
             <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
               Please Log In
             </h3>
-            <form>
+            <form onSubmit={handleLogIn}>
               <div className="mb-1 sm:mb-2">
                 <label htmlFor="email" className="inline-block mb-1 font-medium">
                   E-mail
@@ -33,6 +73,9 @@ const Login = () => {
                   name="password"
                 />
               </div>
+              <p className="text-xs mt-3 text-red-600 sm:text-sm text-center">
+              {error}
+            </p>
               <div className="mt-4 mb-2 sm:mb-4">
                 <button
                   type="submit"
@@ -48,6 +91,7 @@ const Login = () => {
               </div>
               <div className="mt-4 mb-2 sm:mb-4">
                 <button
+                 onClick={handleGoogleSignIn}
                   aria-label="Login with Google"
                   type="button"
                   className="flex items-center justify-center btn btn-outline w-full p-4 transition duration-200 bg-white text-black hover:bg-rose-500 focus:shadow-outline focus:outline-none rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:shadow-outline h-12"
@@ -78,9 +122,9 @@ const Login = () => {
                   <p className="ml-3">Login with GitHub</p>
                 </button>
               </div>
-              <p className="text-xs mt-3 text-gray-600 sm:text-sm">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
+              <p className="text-xs mt-3 text-gray-600 sm:text-sm text-center">
+           Don't have an account? Please <Link to={'/registration'} className="link link-primary">Register</Link>
+          </p>
             </form>
           </div>
         </div>

@@ -9,6 +9,7 @@ import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses/:id",
-        element: <Course></Course>,
+        element: <PrivateRoute><Course></Course></PrivateRoute>,
         loader: ({params}) =>fetch(`https://educamp-server-side.vercel.app/courses/${params.id}`)
       },
       {
