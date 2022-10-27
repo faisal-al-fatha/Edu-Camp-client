@@ -1,7 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider, updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { toast } from 'react-toastify';
 import { AuthContext } from "../../Layout/Main";
 
 const SignUp = () => {
@@ -22,16 +21,14 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
        
-        // update name 
+        // update name and photoURL
         updateProfile(auth.currentUser,{
             displayName: name,
             photoURL: photoURL
         })
-        .then(()=>{
-            toast.success('User Name updated!')
-        })
+        .then(()=>{})
         .catch(error=>{
-            toast.error(error.message)
+            setError(error.message)
         })
 
         form.reset();

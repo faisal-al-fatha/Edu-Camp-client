@@ -100,12 +100,14 @@ const Nav = () => {
             <li>
               <p>
                 {user?.photoURL ? (
-                  <img
-                    className="rounded-full h-8"
+                    <div className="tooltip" data-tip={user.displayName}>
+                    <img
+                    className="rounded-full h-8 w-8"
                     src={user.photoURL}
-                    title={user.displayName}
                     alt=""
                   />
+                  </div>
+                 
                 ) : (
                   <FaUser title={user?.displayName? user.displayName: "user"}></FaUser>
                 )}

@@ -1,7 +1,7 @@
 const FAQ = () => {
   return (
     <div>
-      <div className="grid grid-cols-1 gap-5 my-14 md:mx-96">
+      <div className="grid grid-cols-1 gap-5 my-14 lg:mx-72 md:mx-48 sm:mx-10">
         {/* Question 1 */}
         <div
           tabIndex={0}
