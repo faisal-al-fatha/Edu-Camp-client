@@ -21,3 +21,11 @@ react, font-awesome, react-router, react-icon, firebase authentication etc
 'https://educamp-server-side.vercel.app/courses'
 &
 'https://educamp-server-side.vercel.app/courses/${params.id}'
+
+### Special Features
+
+"\*Google Authentication"
+"\*Github Authentication"
+"\*Email Password Authentictaion"
+"\*Firbase Deploy and Authentication"
+"\*Environment key used"
