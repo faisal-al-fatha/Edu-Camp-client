@@ -1,8 +1,11 @@
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Layout/Main";
 
 const Nav = () => {
+    const {user} = useContext(AuthContext);
   return (
     <div>
       <div className="navbar drop-shadow-xl bg-black py-5 sticky top-0">

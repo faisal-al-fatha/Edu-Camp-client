@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Blogs from "../Pages/Blog/Blogs";
+import CheckOut from "../Pages/CheckOut/CheckOut";
 import Course from "../Pages/Course/Course";
 import Courses from "../Pages/Courses/Courses";
 import ErrorPage from "../Pages/ErrorPage";
@@ -47,6 +48,12 @@ export const routes = createBrowserRouter([
       {
         path: "/courses/:id",
         element: <Course></Course>,
+        loader: ({params}) =>fetch(`https://educamp-server-side.vercel.app/courses/${params.id}`)
+      },
+      {
+        path: "/checkout/:id",
+        element: <CheckOut></CheckOut>,
+        loader: ({params}) =>fetch(`https://educamp-server-side.vercel.app/courses/${params.id}`)
       },
     ],
   },

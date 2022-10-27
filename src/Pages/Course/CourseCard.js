@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const CourseCard = ({ course }) => {
-  const { id, picture, price, ratings, name, learnObjectives } = course;
+  const { id, picture, price, ratings, name } = course;
   return (
     <div>
       <div className="card w-full bg-white shadow-xl rounded-md">
@@ -14,7 +14,7 @@ const CourseCard = ({ course }) => {
           <h2 className="card-title">
           {name}
           </h2>
-          <p><small>Ratings: {ratings} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStarHalfStroke}></FontAwesomeIcon>}</small></p>
+          <p><small>Ratings: {ratings} <span className="text-amber-500">{<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStarHalfStroke}></FontAwesomeIcon>}</span></small></p>
           <div className="card-actions justify-between">
             <div className="badge badge-outline">Price: {price}$</div>
             
