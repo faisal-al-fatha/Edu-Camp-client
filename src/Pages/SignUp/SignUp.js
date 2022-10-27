@@ -1,10 +1,11 @@
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 import { AuthContext } from "../../Layout/Main";
 
 const SignUp = () => {
-  const { providerLogin, createUser } = useContext(AuthContext);
+  const { providerLogin, createUser, auth } = useContext(AuthContext);
   const [error, setError]= useState('');
 
 
@@ -20,7 +21,19 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+       
+        // update name 
+        updateProfile(auth.currentUser,{
+            displayName: name,
+            photoURL: photoURL
+        })
+        .then(()=>{
+            toast.success('User Name updated!')
+        })
+        .catch(error=>{
+            toast.error(error.message)
+        })
+
         form.reset();
         setError('')
       })
