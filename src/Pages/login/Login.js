@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Layout/Main";
@@ -8,6 +8,7 @@ import { AuthContext } from "../../Layout/Main";
 const Login = () => {
     const { providerLogin, logIn} = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError]= useState('');
@@ -39,6 +40,15 @@ const Login = () => {
     })
     .catch(error=> console.error(error))
         }
+
+        const handleGitHubSignIn = () =>{
+            providerLogin(gitHubProvider)
+            .then(result =>{
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error=> console.error(error))
+                }
 
     return (
         <div className="w-full max-w-xl xl:px-8 lg:w-5/12 mx-auto my-5">
@@ -108,6 +118,7 @@ const Login = () => {
               </div>
               <div>
                 <button
+                onClick={handleGitHubSignIn}
                   aria-label="Login with GitHub"
                   type="button"
                   className="flex items-center justify-center btn btn-outline w-full p-4 transition duration-200 bg-white text-black hover:bg-rose-500 focus:shadow-outline focus:outline-none rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:shadow-outline h-12"
