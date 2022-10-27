@@ -4,6 +4,7 @@ import Blogs from "../Pages/Blog/Blogs";
 import Course from "../Pages/Course/Course";
 import Courses from "../Pages/Courses/Courses";
 import ErrorPage from "../Pages/ErrorPage";
+import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
@@ -13,7 +14,7 @@ export const routes = createBrowserRouter([
     path: "/",
     element: <Main></Main>,
     errorElement: <ErrorPage></ErrorPage>,
-    loader:() => fetch('http://localhost:5000/courses'),
+    loader:() => fetch('https://educamp-server-side.vercel.app/courses'),
     children: [
       {
         index: true,
@@ -26,6 +27,10 @@ export const routes = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
       },
       {
         path: "/login",

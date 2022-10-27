@@ -40,6 +40,16 @@ const Nav = () => {
                 Courses
               </Link>
             </li>
+            <li>
+              <Link
+                to="/faq"
+                aria-label="FAQ"
+                title="FAQ"
+                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+              >
+                FAQ
+              </Link>
+            </li>
 
             <li>
               <Link
@@ -66,13 +76,13 @@ const Nav = () => {
                 for="Toggle1"
                 className="inline-flex items-center cursor-pointer dark:text-gray-100"
               >
-                <span>Light</span>
-                <span className="relative">
+                <span><small>Light</small></span>
+                <span className="relative"><small>
                   <input id="Toggle1" type="checkbox" className="hidden peer" />
                   <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-emerald-400"></div>
-                  <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                  <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div></small>
                 </span>
-                <span>Dark</span>
+                <span><small>Dark</small></span>
               </label>
             </li>
           </ul>
