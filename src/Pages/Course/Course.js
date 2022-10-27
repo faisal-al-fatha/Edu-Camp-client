@@ -23,11 +23,11 @@ const Course = () => {
         {({ toPdf }) => <button onClick={toPdf} className="text-2xl"><FaFileDownload></FaFileDownload></button>}
       </Pdf>
       </div>
-     <div ref={ref} className="card bg-base-100 shadow-xl ">
+     <div className="card bg-base-100 shadow-xl ">
         <figure>
           <img src={picture} alt="Album" className="w-full" />
         </figure>
-        <div className="card-body">
+        <div  ref={ref} className="card-body">
           <h2 className="card-title">{name}</h2>
           <p><span className="font-semibold">Learning Objectives : </span>{learnObjectives}</p>
           <p>Ratings: {ratings} <span className="text-amber-500">{<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>} {<FontAwesomeIcon icon={faStarHalfStroke}></FontAwesomeIcon>}</span></p>
