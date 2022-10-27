@@ -48,12 +48,12 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses/:id",
-        element: <PrivateRoute><Course></Course></PrivateRoute>,
+        element: <Course></Course>,
         loader: ({params}) =>fetch(`https://educamp-server-side.vercel.app/courses/${params.id}`)
       },
       {
         path: "/checkout/:id",
-        element: <CheckOut></CheckOut>,
+        element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
         loader: ({params}) =>fetch(`https://educamp-server-side.vercel.app/courses/${params.id}`)
       },
     ],

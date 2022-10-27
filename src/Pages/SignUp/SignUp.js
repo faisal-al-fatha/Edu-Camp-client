@@ -52,7 +52,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-1 sm:mb-2">
             <label htmlFor="name" className="inline-block mb-1 font-medium">
-              Name
+              Full Name
             </label>
             <input
               placeholder="John Doe"
@@ -64,7 +64,7 @@ const SignUp = () => {
           </div>
           <div className="mb-1 sm:mb-2">
             <label htmlFor="photoURL" className="inline-block mb-1 font-medium">
-              PhotoURL
+              Photo URL
             </label>
             <input
               placeholder="https//.............."
